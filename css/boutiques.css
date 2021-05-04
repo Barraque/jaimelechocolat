@@ -1,0 +1,83 @@
+/* table =============================================== */
+table {
+    border-collapse: collapse;
+    border-spacing : 0;
+
+    border: 1px solid #ddd;
+
+    display: inline-block; overflow: auto;
+}
+
+tr {
+    display: inline-block;
+    width: 100%;
+}
+
+/* button table ============================================ */
+
+#adress_tab > tbody > tr > button {
+    box-sizing     : border-box;
+    border         : none;
+    padding        : 6px 10px;
+    text-decoration: none;
+
+    transition-duration: 0.4s;
+    cursor             : pointer;
+
+    background: none;
+
+    width: 100%;
+}
+
+.Grid {
+    display   : flex;
+    flex-wrap : wrap;
+    list-style: none;
+
+    margin : 0;
+    padding: 0;
+}
+
+.Grid-cell {
+    border: 10px solid transparent;
+
+    flex      : 1;
+    overflow  : hidden;
+    transition: .3s ease-in-out;
+
+    text-align: center;
+}
+
+#adress_tab > tbody > tr > button:hover {
+    background: #f2f2f2;
+}
+
+#adress_tab > tbody > tr > button:focus {
+    background: #d8d8d8;
+}
+
+/* Autre ================================================ */
+#carte {
+    width: 75%;
+}
+
+#adresse {
+    width: 25%;
+}
+
+@media screen and (max-width: 600px) {
+    .Grid {
+        display: block;
+    }
+
+    #adresse, #carte {
+        width: 100%;
+    }
+
+    #carte {
+        position: sticky;
+        top : 48px;
+
+        border: 0px;
+    }
+}

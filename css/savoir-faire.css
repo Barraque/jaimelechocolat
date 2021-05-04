@@ -1,0 +1,173 @@
+h3 {
+  text-align: center;
+  position  : sticky;
+  top       : 48px;
+
+  z-index: 4;
+
+  background: linear-gradient(to right, #d1913c, #ffd194);
+
+  padding-top   : 1em;
+  padding-bottom: 1em;
+  padding-left  : 0;
+  padding-right : 0;
+
+  margin: 0px;
+
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+  display     : block;
+  margin-top  : 10px;
+  margin-left : auto;
+  margin-right: auto;
+  width       : 30%;
+  height      : 30%;
+}
+
+/* PARALLAX ============================================= 
+https://www.cssscript.com/pure-css-parallax-scrolling-effect/ */
+/*SETUP*/
+html {
+  height  : 100%;
+  overflow: hidden;
+}
+
+body {
+  margin     : 0;
+  padding    : 0;
+  height     : 100%;
+  overflow-y : scroll;
+  overflow-x : hidden;
+  perspective: 1px;
+}
+
+nav {
+  z-index: 2;
+}
+
+footer {
+  position: sticky;
+  bottom  : 0;
+}
+
+main {
+  width        : auto;
+  margin-bottom: 0px;
+}
+
+/*SECTION PARTS SIZING*/
+
+p {
+  font-size  : 1.2em;
+  line-height: 150%;
+  color      : #333;
+}
+
+.section {
+  position  : relative;
+  padding   : 10% 10%;
+  min-height: 100%;
+  width     : 100%;
+  box-sizing: border-box;
+  box-shadow: 0 5px 1px rgba(0, 0, 0, .7), 0 -5px 1px rgba(0, 0, 0, .7);
+  background: 50% 50% / cover;
+}
+
+/*SECTION DATA BOXES*/
+.text {
+  width        : 80%;
+  padding      : 10px 50px;
+  border-radius: 5px;
+  background   : rgba(200, 200, 200, .7);
+  box-shadow   : 0 0 10px rgba(0, 0, 0, .8);
+}
+
+.section1 {
+  background-attachment: fixed;
+  z-index              : 0;
+}
+
+.section2 {
+  background-image     : url("http://i.imgur.com/SYAARx7.jpg");
+  background-attachment: fixed;
+  z-index              : 1;
+}
+
+/* Commentaires clients ============================= */
+blockquote {
+  margin: 0;
+}
+
+blockquote > p {
+  padding      : 15px;
+  background   : #eee;
+  border-radius: 5px;
+
+  overflow          : auto;
+  display           : -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+blockquote p::before {
+  content: '\201C';
+}
+
+blockquote p::after {
+  content: '\201D';
+}
+
+small {
+  padding-right: 15px;
+  text-align   : right;
+
+  display: inline-block;
+  width  : 100%;
+}
+
+/* Slideshow commentaires ========================== */
+#customerComments {
+  margin: 1em auto;
+}
+
+#customerComments blockquote:nth-of-type(1) {
+  animation-name     : zoomIn;
+  animation-duration : 4s;
+  animation-fill-mode: both;
+}
+
+#customerComments blockquote:nth-of-type(n+2) {
+  display: none;
+}
+
+@keyframes fader {
+  from {
+    opacity: 1.0;
+  }
+
+  to {
+    opacity: 0.0;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity  : 0;
+    transform: scale3d(.3, .3, .3);
+  }
+
+  25%,
+  50% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .text {
+    width: 100%;
+    padding: 10px;
+    font-size: medium;
+  }
+}

@@ -1,0 +1,148 @@
+/* TABLEAU ==================================================== */
+
+table tr {
+  display  : flex;
+  flex-wrap: wrap;
+  margin   : 0;
+  padding  : 0;
+}
+
+th {
+  padding: 0 10px;
+  flex   : 0 0 100%;
+
+  text-align      : left;
+  background-color: rgb(243, 207, 193);
+  box-shadow      : 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+
+  /*
+  position: sticky;
+  top     : 48px;
+  z-index: 2;
+  */
+}
+
+/* MENU TABLEAU ============================================== */
+#prix_desc::before {
+  content: "Prix";
+}
+
+.menu {
+  margin          : auto;
+  padding         : 0;
+  overflow        : hidden;
+  background-color: #8D5941;
+  border-radius        : 4px;
+
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+
+  display: flex;
+
+  position: sticky;
+  top     : 48px;
+  z-index : 3;
+}
+
+.menu input[type=text] {
+  box-sizing           : border-box;
+  border               : 2px solid #ccc;
+  border-radius        : 4px;
+  background           : left / contain no-repeat url('data/searchicon.png'), white;
+  /*background-position: 10px 10px; */
+  padding              : 12px 20px 12px 40px;
+
+  width     : 130px;
+  transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+.menu input[type=text]:focus {
+  width: 100%;
+}
+
+.menu button {
+  box-sizing      : border-box;
+  background-color: #8D5941;
+  border          : none;
+  /*color         : white;*/
+  padding         : 12px 20px;
+  text-align      : center;
+  text-decoration : none;
+  display         : inline-block;
+  flex: none;
+
+  transition-duration: 0.4s;
+  cursor             : pointer;
+}
+
+button:hover {
+  background-color: #DB5E2C;
+  color           : white;
+}
+
+
+/* FICHE PRODUIT ============================================= */
+
+.gallery {
+  border          : 10px solid transparent;
+  background-color: white;
+  background-clip : padding-box;
+  filter          : drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+
+  display      : flex;
+  flex-flow    : row wrap;
+  align-content: flex-end;
+}
+
+.gallery:hover {
+  background-clip: padding-box;
+  border         : 10px solid #777;
+  transition     : all 0.5s ease-out;
+}
+
+.gallery img {
+  width : 100%;
+  height: auto;
+}
+
+.desc {
+  padding   : 15px;
+  text-align: center;
+
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  flex   : 0 0 33.3333%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    flex: 0 0 50%
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .responsive {
+    flex: 0 0 100%;
+  }
+
+  #prix_desc::before {
+    content: "";
+  }
+
+  .menu > input[type=text]:focus ~ button {
+    display : none;
+    
+  }
+
+  .menu button {
+    padding : 12px 10px;
+  }
+  
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/about.css">
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
+    <title>La chocolaterie - A propos</title>
+</head>
+
+<body>
+    <header>
+        <!-- Click sur image pour retourner à l'accueil -->
+        <a href="index.html"> <img src="logo.png"> </a>
+    </header>
+
+    <nav id="mainTopNav" class="topnav">
+        <a href="index.html">Accueil</a>
+        <a href="produits.html">Nos produits</a>
+        <a href="choco_perso.html">Mon chocolat personalisé</a>
+        <a href="savoir-faire.html">Notre savoir faire</a>
+        <a href="boutiques.html">Nos boutiques</a>
+        <a class="active" href="about.html">À propos</a>
+        <a href="javascript:void(0);" class="icon" onclick="topnavManager()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+
+    <main>
+      <h3>L'équipe du Projet</h3>
+
+      <div class="Grid--1of3 Grid">
+        <div class="Grid-cell"><img src="data/about/nicolas.jpg">
+            <b>Nicolas</b><br>
+            Content and Customer Experience Manager
+        </div>
+
+        <div class="Grid-cell"><img src="data/about/nil.jpg">
+            <b>Nil</b><br>
+            Responsable boutiques
+        </div>
+
+        <div class="Grid-cell"><img src="data/about/paul.jpg">
+            <b>Paul</b><br>
+            Responsable Développement Produits
+        </div>
+
+      </div>
+
+    <div class="text">
+      
+          </div>
+      <h3>Contact us</h3>
+      <div class="formulaire">
+        <form id="login" class="container">
+
+            <div class="item">
+                <label for="surname"></label>
+                <input type="text" id="firstname" name="user_firstname" placeholder="Prénom" required>
+            </div>
+
+            <div class="item">
+                <label for="name"></label>
+                <input type="text" id="name" name="user_name" placeholder="Nom" required>
+            </div>
+
+            <div class="break"></div> <!-- break to a new row -->
+
+            <div class="item">
+                <label for="mail"></label>
+                <input type="email" id="mail" name="user_mail" placeholder="mail@domaine.com" required>
+            </div>
+
+            <div class="break"></div> <!-- break to a new row -->
+
+            <div class="item">
+                <label for="message"></label>
+                <textarea id="message" name="user_message" placeholder="Votre commentaire" required></textarea>
+            </div>
+
+            <div class="break"></div> <!-- break to a new row -->
+
+            <div class="item">
+                <button type="button" onclick="">Envoyer</button>
+            </div>
+        </form>
+
+      </div>
+    </main>
+
+    <footer>
+    
+        <span id="left">Choc'Efrei - Tous droits réservés</span>
+    
+        <span id="right">
+          <ul>
+            <li><a href="index.html"> <img src="data/logo-rond-twitter.png"> </a> </li>
+            <li><a href="index.html"> <img src="data/fb-logo.png"> </a> </li>
+            <li><a href="index.html"> <img src="data/logo-rond-insta.png"> </a> </li>
+            <li><a href="about.html">A notre propos</a></li>
+          </ul>
+        </span>
+    
+      </footer>
+</body>
+
+<script src="js/script.js"></script>
+<script src="js/about.js"></script>
+
+</html>
