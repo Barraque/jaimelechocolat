@@ -11,12 +11,35 @@ if(!isset($_SESSION['user'])){
     <title>Espace membre</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/icons.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/about.css">
+    <link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
+
+
 </head>
+<header>
+
+    <a href="../index.html"> <img src="../logo.png"> </a>
+
+</header>
+    <nav id="mainTopNav" class="topnav">
+        <a class="active" href="../index.html">Accueil</a>
+        <a href="../produits.html">Nos produits</a>
+        <a href="../choco_perso.html">Mon chocolat personalisé</a>
+        <a href="../savoir-faire.html">Notre savoir faire</a>
+        <a href="../boutiques.html">Nos boutiques</a>
+        <a href="../about.html">À propos</a>
+        <a href="javascript:void(0);" class="icon" onclick="topnavManager()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+
+
 <body>
+
 <div class="container">
     <div class="col-md-12">
         <?php
@@ -107,6 +130,21 @@ if(!isset($_SESSION['user'])){
         </div>
     </div>
 </div>
+
+<footer>
+
+    <span id="left">Choc'Efrei - Tous droits réservés</span>
+
+    <span id="right">
+          <ul>
+            <li><a href="index.html"> <img src="../data/logo-rond-twitter.png"> </a> </li>
+            <li><a href="index.html"> <img src="../data/fb-logo.png"> </a> </li>
+            <li><a href="index.html"> <img src="../data/logo-rond-insta.png"> </a> </li>
+            <li><a href="about.html">A notre propos</a></li>
+          </ul>
+        </span>
+
+</footer>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

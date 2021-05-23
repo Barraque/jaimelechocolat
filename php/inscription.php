@@ -2,14 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="NoS1gnal"/>
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/icons.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/about.css">
+    <link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
+
+
     <title>Connexion</title>
 </head>
 <body>
+<header>
+    <!-- Click sur image pour retourner à l'accueil -->
+    <a href="../index.html"> <img src="../logo.png"> </a>
+
+</header>
 <div class="login-form">
     <?php
     if(isset($_GET['reg_err']))
@@ -86,6 +94,21 @@
         </div>
     </form>
 </div>
+
+<footer>
+
+    <span id="left">Choc'Efrei - Tous droits réservés</span>
+
+    <span id="right">
+          <ul>
+            <li><a href="index.html"> <img src="../data/logo-rond-twitter.png"> </a> </li>
+            <li><a href="index.html"> <img src="../data/fb-logo.png"> </a> </li>
+            <li><a href="index.html"> <img src="../data/logo-rond-insta.png"> </a> </li>
+            <li><a href="about.html">A notre propos</a></li>
+          </ul>
+        </span>
+
+</footer>
 <style>
     .login-form {
         width: 340px;
