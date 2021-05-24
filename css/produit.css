@@ -1,0 +1,19 @@
+body{
+    background-color: #F4C2AE;
+    margin: 0;
+}
+.gauche{
+
+
+}
+.droite{
+
+
+}
+.containercss {
+    background-color: #f3cfc1;
+    width: 70%;
+    margin: 30px auto auto auto;
+    display: flex;
+    gap: 40px;
+}

@@ -77,7 +77,7 @@ var default_data = [
     }
 ]
 
-init();
+//init();
 
 /* REMPLIR TABLEAU =================================================================== */
 function init() {

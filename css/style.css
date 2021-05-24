@@ -2,7 +2,8 @@
 
 * {
     box-sizing : border-box;
-    font-family: 'Courgette', cursive;
+    /*font-family: 'Courgette', cursive;*/
+    font-family: 'Roboto';
 }
 
 /* navbar ============================================= */
