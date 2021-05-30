@@ -6,7 +6,7 @@ if(!empty($_POST['email']) && !empty($_POST['password']))
     $email = htmlspecialchars($_POST['email']);
     $password = htmlspecialchars($_POST['password']);
 
-    $check = $bdd->prepare('SELECT pseudo, email, password FROM utilisateurs WHERE email = ?');
+    $check = $bdd->prepare('SELECT id,pseudo, email, password FROM utilisateurs WHERE email = ?');
     $check->execute(array($email));
     $data = $check->fetch();
     $row = $check->rowCount();
@@ -20,6 +20,7 @@ if(!empty($_POST['email']) && !empty($_POST['password']))
             {
                 session_start();
                 $_SESSION['user'] = $data['email'];
+                $_SESSION['id'] = $data['id'];
                 header('Location: landing.php');
                 die();
             }else{ header('Location: index.php?login_err=password'); die(); }

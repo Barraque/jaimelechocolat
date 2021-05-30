@@ -31,7 +31,7 @@ require_once 'config.php';
 if(isset($_GET["id"])) {
     $id = htmlspecialchars($_GET["id"]);
     if (is_numeric($id)) {
-        $stmt = $bdd->prepare('SELECT * FROM produits where id_produits = ?');
+        $stmt = $bdd->prepare("select nom,prix,marque,description,img_src,quantite from produits join stock on produits.id_produits = stock.id_produits where produits.id_produits = ?");
         $stmt->bindValue(1, $id);
         $stmt->execute();
         $res = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -43,9 +43,11 @@ if(isset($_GET["id"])) {
         </div>
         <div class='droite'>
             <h1> <?=$res["nom"]?></h1>
-            <h2><?=$res["marque"]?></h2>
+            <h2>Marque : <?=$res["marque"]?></h2>
             <p><?=$res["description"]?></p>
-            <p><?=$res["prix"]?></p>
+            <br>
+            <p><?=$res["prix"]?>€</p>
+            <p><?=$res["quantite"]?> restants </p>
         </div>
 </div>
 <?php

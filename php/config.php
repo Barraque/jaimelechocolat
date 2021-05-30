@@ -1,5 +1,4 @@
 <?php
-print_r(PDO::getAvailableDrivers());
     try {
         /*
         $servername = "achetez.ml";
@@ -19,7 +18,8 @@ print_r(PDO::getAvailableDrivers());
         $bdd = new PDO('mysql:host='.$dbhost.';port='.$dbport.';dbname='.$db.'', $dbuser, $dbpasswd);
      //   $bdd = new PDO('mysql:achetez.ml:3306;chocolat;charset=utf8', 'user','jaimelechocolat');
 
-}catch (Exception $e){
-        die('Erreur'.$e->getMessage());
-    }
 }
+catch (Exception $e){
+        die('Erreur'.$e->getMessage());
+}
+?>
