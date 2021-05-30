@@ -1,4 +1,5 @@
 <?php
+print_r(PDO::getAvailableDrivers());
     try {
         /*
         $servername = "achetez.ml";
@@ -21,3 +22,4 @@
 }catch (Exception $e){
         die('Erreur'.$e->getMessage());
     }
+}
