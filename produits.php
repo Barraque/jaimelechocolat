@@ -14,13 +14,13 @@
 <body>
     <header>
         <!-- Click sur image pour retourner à l'accueil -->
-        <a href="index.html"> <img src="logo.png"> </a>
+        <a href="accueil.php"> <img src="logo.png"> </a>
     </header>
 
     <nav id="mainTopNav" class="topnav">
-        <a href="index.html">Accueil</a>
-        <a class="active" href="produits.html">Nos produits</a>
-        <a href="choco_perso.html">Mon chocolat personalisé</a>
+        <a href="accueil.php">Accueil</a>
+        <a class="active" href="produits.php">Nos produits</a>
+        <a href="choco_perso.php">Mon chocolat personalisé</a>
         <a href="savoir-faire.html">Notre savoir faire</a>
         <a href="boutiques.html">Nos boutiques</a>
         <a href="about.html">À propos</a>
@@ -61,9 +61,9 @@
     
         <span id="right">
           <ul>
-            <li><a href="index.html"> <img src="data/logo-rond-twitter.png"> </a> </li>
-            <li><a href="index.html"> <img src="data/fb-logo.png"> </a> </li>
-            <li><a href="index.html"> <img src="data/logo-rond-insta.png"> </a> </li>
+            <li><a href="accueil.php"> <img src="data/logo-rond-twitter.png"> </a> </li>
+            <li><a href="accueil.php"> <img src="data/fb-logo.png"> </a> </li>
+            <li><a href="accueil.php"> <img src="data/logo-rond-insta.png"> </a> </li>
             <li><a href="about.html">A notre propos</a></li>
           </ul>
         </span>

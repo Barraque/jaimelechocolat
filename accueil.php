@@ -14,14 +14,26 @@
 <body>
     <header>
         <!-- Click sur image pour retourner à l'accueil -->
-        <a href="index.html"> <img src="logo.png"> </a>
-        <button onclick="window.location.href = 'http://localhost/jaimelechocolat/php/index.php';"> Connexion </button>
+        <a href="accueil.php"> <img src="logo.png"> </a>
+
+        <?php
+            session_start();
+                if(!isset($_SESSION['user'])){
+                     $test = "<button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/index.php';\"> Connexion </button>";
+                }
+            else{
+                 $test ="<h1 class=\"p-5\">Bonjour " . $_SESSION['user'] . "</h1> <button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/deconnexion.php' \"> Deconnexion </button>";
+                }
+
+        echo $test;
+        ?>
+
     </header>
 
     <nav id="mainTopNav" class="topnav">
-            <a class="active" href="index.html">Accueil</a>
-            <a href="php/produits.php">Nos produits</a>
-            <a href="choco_perso.html">Mon chocolat personalisé</a>
+            <a class="active" href="accueil.php">Accueil</a>
+            <a href="produits.php">Nos produits</a>
+            <a href="choco_perso.php">Mon chocolat personalisé</a>
             <a href="savoir-faire.html">Notre savoir faire</a>
             <a href="boutiques.html">Nos boutiques</a>
             <a href="about.html">À propos</a>
@@ -44,14 +56,14 @@
         <div class="Grid--1of2">
             <div class="Grid">
                 <div class=" Grid-cell">
-                    <a href="produits.html">
+                    <a href="produits.php">
                         <div class="container"> <img src="data/img/produits.jpg">
                             <div class="center">Nos produits</div>
                         </div>
                     </a>
                 </div>
                 <div class=" Grid-cell">
-                    <a href="choco_perso.html">
+                    <a href="choco_perso.php">
                         <div class="container"> <img src="data/img/chocolat_perso.jpg">
                             <div class="center">Votre chocolat personalisé</div>
                         </div>
@@ -94,9 +106,9 @@
 
         <span id="right">
           <ul>
-            <li><a href="index.html"> <img src="data/logo-rond-twitter.png"> </a> </li>
-            <li><a href="index.html"> <img src="data/fb-logo.png"> </a> </li>
-            <li><a href="index.html"> <img src="data/logo-rond-insta.png"> </a> </li>
+            <li><a href="accueil.php"> <img src="data/logo-rond-twitter.png"> </a> </li>
+            <li><a href="accueil.php"> <img src="data/fb-logo.png"> </a> </li>
+            <li><a href="accueil.php"> <img src="data/logo-rond-insta.png"> </a> </li>
             <li><a href="about.html">A notre propos</a></li>
           </ul>
         </span>
