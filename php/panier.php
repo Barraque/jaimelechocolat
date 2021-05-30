@@ -41,19 +41,25 @@
         $stmt->bindValue(1, $_SESSION["id"]);
         $stmt->execute();
         $res = $stmt->fetchAll();
-        foreach ($res as $row){
-            echo("<div class='produit'>");
-            echo("<h3>".$row['nom']."</h3>");
-            echo("<p>Quantité : ".$row['qte']." - Prix par produit : ".$row['prix']. " - Soit ". $row['qte']*$row['prix']." € </p>");
-            echo("</div>");
+        if(count($res) == 0){
+            echo "<p>Ton panier est vide :(</p>";
+
+        }
+        else {
+            foreach ($res as $row) {
+                echo("<div class='produit'>");
+                echo("<h3>" . $row['nom'] . "</h3>");
+                echo("<p>Quantité : " . $row['qte'] . " - Prix par produit : " . $row['prix'] . " - Soit " . $row['qte'] * $row['prix'] . " € </p>");
+                echo("</div>");
+            }
+            echo " <h1> Supprimer mon panier</h1>
+                   <form action=\"effacerPanier.php\" method=\"get\">
+                   <input type=\"submit\" id=\"delete\" value=\"Supprimer\"><br>
+                   </form>";
         }
     }
     ?>
-    <h1> Supprimer mon panier</h1>
-    <?php
 
-        $stmt = $bdd->prepare('select nom,prix,qte from produits inner join panier on panier.id_produit = produits.id_produits where id_user = ?;')
-    ?>
 
 
 </main>

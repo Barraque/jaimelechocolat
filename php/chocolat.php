@@ -30,12 +30,14 @@
 require_once 'config.php';
 if(isset($_GET["id"])) {
     $id = htmlspecialchars($_GET["id"]);
-    if (is_numeric($id)) {
-        $stmt = $bdd->prepare("select nom,prix,marque,description,img_src,quantite from produits join stock on produits.id_produits = stock.id_produits where produits.id_produits = ?");
+    if ($id) {
+        $stmt = $bdd->prepare("select produits.id_produits,nom,prix,marque,description,img_src,quantite from produits join stock on produits.id_produits = stock.id_produits where produits.id_produits = ?");
         $stmt->bindValue(1, $id);
         $stmt->execute();
         $res = $stmt->fetch(PDO::FETCH_ASSOC);
+        echo $res["nom"];
     ?>
+
 
         <div class='containercss'>
         <div class='gauche'>
@@ -50,6 +52,7 @@ if(isset($_GET["id"])) {
             <p><?=$res["quantite"]?> restants </p>
         </div>
 </div>
+
 <?php
 }
     else{
@@ -60,7 +63,14 @@ else{
     header("Location : /404.html");
 }
 
+
 ?>
+<form action="ajouterProduit.php" method="get">
+    <p> Quantité : </p>
+    <input type="number" id="quantity" name="quantity" min="0">
+    <input type="hidden" id="idproduit" name="idproduit" value="<?=$id?>"/>
+    <input type="submit" id="submit" value="Ajouter">
+</form>
 <footer>
 
     <span id="left">Choc'Efrei - Tous droits réservés</span>
