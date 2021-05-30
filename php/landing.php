@@ -22,13 +22,13 @@ if(!isset($_SESSION['user'])){
 </head>
 <header>
 
-    <a href="../index.html"> <img src="../logo.png"> </a>
+    <a href="../accueil.php"> <img src="../logo.png"> </a>
 
 </header>
     <nav id="mainTopNav" class="topnav">
-        <a class="active" href="../index.html">Accueil</a>
-        <a href="../produits.html">Nos produits</a>
-        <a href="../choco_perso.html">Mon chocolat personalisé</a>
+        <a class="active" href="../accueil.php">Accueil</a>
+        <a href="../produits.php">Nos produits</a>
+        <a href="../choco_perso.php">Mon chocolat personalisé</a>
         <a href="../savoir-faire.html">Notre savoir faire</a>
         <a href="../boutiques.html">Nos boutiques</a>
         <a href="../about.html">À propos</a>
@@ -59,7 +59,7 @@ if(!isset($_SESSION['user'])){
 
 
         <div class="text-center">
-            <h1 class="p-5">Bonjour ! <?php echo $_SESSION['user']; ?></h1>
+            <h1 class="p-5">Bonjour  <?php echo $_SESSION['user']; ?></h1>
             <hr />
             <a href="deconnexion.php" class="btn btn-danger btn-lg">Déconnexion</a>
             <!-- Button trigger modal -->
@@ -137,10 +137,10 @@ if(!isset($_SESSION['user'])){
 
     <span id="right">
           <ul>
-            <li><a href="index.html"> <img src="../data/logo-rond-twitter.png"> </a> </li>
-            <li><a href="index.html"> <img src="../data/fb-logo.png"> </a> </li>
-            <li><a href="index.html"> <img src="../data/logo-rond-insta.png"> </a> </li>
-            <li><a href="about.html">A notre propos</a></li>
+            <li><a href="../accueil.php"> <img src="../data/logo-rond-twitter.png"> </a> </li>
+            <li><a href="../accueil.php"> <img src="../data/fb-logo.png"> </a> </li>
+            <li><a href="../accueil.php"> <img src="../data/logo-rond-insta.png"> </a> </li>
+            <li><a href="../about.html">A notre propos</a></li>
           </ul>
         </span>
 

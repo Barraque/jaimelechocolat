@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require_once 'config.php';
 
 if(!empty($_POST['email']) && !empty($_POST['password']))
@@ -19,7 +19,8 @@ if(!empty($_POST['email']) && !empty($_POST['password']))
 
             if(password_verify($password, $data['password']))
             {
-                $_SESSION['user'] = $data['email'];
+                session_start();
+                $_SESSION['user'] = $data['pseudo'];
                 header('Location: landing.php');
                 die();
             }else{ header('Location: index.php?login_err=password'); die(); }
