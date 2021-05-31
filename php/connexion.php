@@ -21,6 +21,7 @@ if(!empty($_POST['email']) && !empty($_POST['password']))
                 session_start();
                 $_SESSION['user'] = $data['email'];
                 $_SESSION['id'] = $data['id'];
+                $_SESSION['name'] = $data['pseudo'];
                 header('Location: landing.php');
                 die();
             }else{ header('Location: index.php?login_err=password'); die(); }
