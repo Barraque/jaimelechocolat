@@ -18,12 +18,12 @@
     </header>
 
     <nav id="mainTopNav" class="topnav">
-        <a href="accueil.php">Accueil</a>
-        <a href="produits.php">Nos produits</a>
-        <a class="active" href="choco_perso.php">Mon chocolat personalisé</a>
-        <a href="savoir-faire.html">Notre savoir faire</a>
-        <a href="boutiques.html">Nos boutiques</a>
-        <a href="about.html">À propos</a>
+        <a href="../accueil.php">Accueil</a>
+        <a class="active" href="php/produits.php">Nos produits</a>
+        <a href="../choco_perso.php">Mon chocolat personalisé</a>
+        <a href="../savoir-faire.html">Notre savoir faire</a>
+        <a href="../boutiques.html">Nos boutiques</a>
+        <a href="../about.html">À propos</a>
         <a href="javascript:void(0);" class="icon" onclick="topnavManager()">
             <i class="fa fa-bars"></i>
         </a>

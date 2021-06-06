@@ -16,9 +16,9 @@
 </header>
 
 <nav id="mainTopNav" class="topnav">
-    <a href="../index.html">Accueil</a>
+    <a href="../accueil.php">Accueil</a>
     <a class="active" href="produits.php">Nos produits</a>
-    <a href="../choco_perso.html">Mon chocolat personalisé</a>
+    <a href="../choco_perso.php">Mon chocolat personalisé</a>
     <a href="../savoir-faire.html">Notre savoir faire</a>
     <a href="../boutiques.html">Nos boutiques</a>
     <a href="../about.html">À propos</a>
@@ -28,6 +28,15 @@
 </nav>
 <?php
 require_once 'config.php';
+
+function function_alert($msg) {
+    echo "<script type='text/javascript'>alert('$msg');</script>";
+}
+
+
+if(isset($_GET["msg"])){
+    function_alert(htmlspecialchars($_GET["msg"]));
+}
 if(isset($_GET["id"])) {
     $id = htmlspecialchars($_GET["id"]);
     if ($id) {
@@ -50,7 +59,14 @@ if(isset($_GET["id"])) {
             <br>
             <p><?=$res["prix"]?>€</p>
             <p><?=$res["quantite"]?> restants </p>
+            <form action="ajouterProduit.php" method="get">
+                <p> Quantité : </p>
+                <input type="number" id="quantity" name="quantity" min="0">
+                <input type="hidden" id="idproduit" name="idproduit" value="<?=$id?>"/>
+                <input type="submit" id="submit" value="Ajouter">
+            </form>
         </div>
+
 </div>
 
 <?php
@@ -65,12 +81,6 @@ else{
 
 
 ?>
-<form action="ajouterProduit.php" method="get">
-    <p> Quantité : </p>
-    <input type="number" id="quantity" name="quantity" min="0">
-    <input type="hidden" id="idproduit" name="idproduit" value="<?=$id?>"/>
-    <input type="submit" id="submit" value="Ajouter">
-</form>
 <footer>
 
     <span id="left">Choc'Efrei - Tous droits réservés</span>
