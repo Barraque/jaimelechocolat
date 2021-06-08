@@ -19,7 +19,7 @@
         <?php
             session_start();
                 if(!isset($_SESSION['user'])){
-                     $test = "<button onclick=\"window.location.href = 'http://localhost:8888/jaimelechocolat/php/index.php';\"> Connexion </button>";
+                     $test = "<button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/index.php';\"> Connexion </button>";
                 }
             else{
                  $test ="<h1 class=\"p-5\">Bonjour " . $_SESSION['user'] . "</h1> <button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/deconnexion.php' \"> Deconnexion </button>";

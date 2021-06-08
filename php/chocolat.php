@@ -44,7 +44,6 @@ if(isset($_GET["id"])) {
         $stmt->bindValue(1, $id);
         $stmt->execute();
         $res = $stmt->fetch(PDO::FETCH_ASSOC);
-        echo $res["nom"];
     ?>
 
 
