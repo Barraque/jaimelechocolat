@@ -15,6 +15,19 @@
     <header>
         <!-- Click sur image pour retourner à l'accueil -->
         <a href="accueil.php"> <img src="logo.png"> </a>
+
+        <?php
+        session_start();
+        if(!isset($_SESSION['user'])){
+            $test = "<button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/index.php';\"> Connexion </button>";
+        }
+        else{
+            $test ="<div class=\"top_header\" <h1>Bonjour " . $_SESSION['name'] . "</h1><br><br><button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/deconnexion.php' \"> Deconnexion </button></div> ";
+        }
+
+        echo $test;
+        ?>
+
     </header>
 
     <nav id="mainTopNav" class="topnav">

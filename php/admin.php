@@ -39,6 +39,9 @@
             <input type="text" name="description" class="form-control" placeholder="Description" required="required" autocomplete="off">
         </div>
         <div class="form-group">
+            <input type="number" name="quantite" class="form-control" placeholder="quantite" required="required" autocomplete="off">
+        </div>
+        <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block">Ajouter le produit</button>
         </div>
     </form>
