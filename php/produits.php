@@ -27,6 +27,12 @@
         <a href="javascript:void(0);" class="icon" onclick="topnavManager()">
             <i class="fa fa-bars"></i>
         </a>
+        <?php
+        session_start();
+        if(isset($_SESSION["admin"]) and $_SESSION["admin"] == true){
+            echo" <a href=\"./admin.php\">Admin</a>";
+        }
+        ?>
     </nav>
 
     <main>

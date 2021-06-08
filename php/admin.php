@@ -16,7 +16,25 @@
 <body>
 <header>
     <!-- Click sur image pour retourner à l'accueil -->
-    <a href="../accueil.php"> <img src="../logo.png"> </a>
+    <nav id="mainTopNav" class="topnav">
+        <a href="../accueil.php">Accueil</a>
+        <a class="active" href="produits.php">Nos produits</a>
+        <a href="../choco_perso.php">Mon chocolat personalisé</a>
+        <a href="../savoir-faire.html">Notre savoir faire</a>
+        <a href="../boutiques.html">Nos boutiques</a>
+        <a href="../about.html">À propos</a>
+        <a href="javascript:void(0);" class="icon" onclick="topnavManager()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <?php
+        session_start();
+        if(isset($_SESSION["admin"]) and $_SESSION["admin"] == true){
+            echo " <a href=\"./admin.php\">Admin</a>";
+        } else {
+            header("Location: http://localhost/jaimelechocolat/accueil.php?msg=voous n avez pas le droit d etre ici");
+        }
+        ?>
+    </nav>
 
 </header>
 <div class="login-form">

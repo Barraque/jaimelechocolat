@@ -25,20 +25,26 @@
     <a href="javascript:void(0);" class="icon" onclick="topnavManager()">
         <i class="fa fa-bars"></i>
     </a>
+    <?php
+    session_start();
+    if(isset($_SESSION["admin"]) and $_SESSION["admin"] == true){
+        echo" <a href=\"./admin.php\">Admin</a>";
+    }
+    ?>
 </nav>
 <?php
-require_once 'config.php';
+    require_once 'config.php';
 
-function function_alert($msg) {
-    echo "<script type='text/javascript'>alert('$msg');</script>";
-}
+    function function_alert($msg) {
+        echo "<script type='text/javascript'>alert('$msg');</script>";
+    }
 
 
-if(isset($_GET["msg"])){
-    function_alert(htmlspecialchars($_GET["msg"]));
-}
-if(isset($_GET["id"])) {
-    $id = htmlspecialchars($_GET["id"]);
+    if(isset($_GET["msg"])){
+        function_alert(htmlspecialchars($_GET["msg"]));
+    }
+    if(isset($_GET["id"])) {
+        $id = htmlspecialchars($_GET["id"]);
     if ($id) {
         $stmt = $bdd->prepare("select produits.id_produits,nom,prix,marque,description,img_src,quantite from produits join stock on produits.id_produits = stock.id_produits where produits.id_produits = ?");
         $stmt->bindValue(1, $id);
