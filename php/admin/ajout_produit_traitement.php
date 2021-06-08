@@ -1,5 +1,5 @@
 <?php
-require_once 'config.php';
+require_once '../config.php';
 
 if (!empty($_POST['nom']) && !empty($_POST['prix']) && !empty($_POST['marque']) && !empty($_POST['img_src']) && !empty($_POST['description'])) {
     foreach ($_POST as $key => $value) {
@@ -14,7 +14,7 @@ if (!empty($_POST['nom']) && !empty($_POST['prix']) && !empty($_POST['marque']) 
 
     $insert->execute();
 } else {
-    header('Location: admin.php?reg_err=password');
+    header('Location: http://localhost/jaimelechocolat/php/admin/admin.php?reg_err=password');
     die();
 }
 

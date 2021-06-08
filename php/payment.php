@@ -42,7 +42,7 @@
         </a>
         <?php
         if(isset($_SESSION["admin"]) and $_SESSION["admin"] == true){
-            echo" <a href=\"./admin.php\">Admin</a>";
+            echo" <a href=\"./admin/admin.php\">Admin</a>";
         }
         ?>
     </nav>

@@ -21,7 +21,7 @@ if(isset($_SESSION["id"]) and isset($_GET["quantity"]) and isset($_GET["idprodui
     $stmt3->bindValue(2, $_SESSION["id"]);
     $stmt3->execute();
     $res3 = $stmt3->fetch(PDO::FETCH_ASSOC);
-    print_r( $res3["cmpt"]);
+
     if($res3["cmpt"] != 0){
         $stmt4 = $bdd->prepare("update panier set qte = qte + ? where id_produit = ? and id_user = ?");
         $stmt4->bindValue(1, $_GET["quantity"]);
