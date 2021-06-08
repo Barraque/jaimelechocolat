@@ -16,9 +16,8 @@ if (!empty($_POST['nom']) && !empty($_POST['prix']) && !empty($_POST['marque']) 
 
 
     $recup_nom = $_POST['nom'];
-    echo ($recup_nom);
     $id_produit = $bdd->lastInsertId();
-    var_dump($id_produit);
+
 
 
     $quantite = htmlspecialchars($_POST['quantite']);
