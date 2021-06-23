@@ -49,12 +49,11 @@
 
     <main>
 
-      <form>
 
      <div class="row">
   <div class="col-75">
     <div class="container">
-      <form action="/action_page.php">
+      <form action="apaye.php" method="post">
 
         <div class="row">
           <div class="col-50">
@@ -111,7 +110,28 @@
         <label>
           <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
         </label>
-        <input type="submit" value="Payer" class="btn">
+          <?php
+              if(isset($_SESSION["id"])) {
+              require_once 'config.php';
+              $stmt = $bdd->prepare('select max(id_panier) max from panier where id_user = ? and actif = 1');
+              $stmt->bindValue(1, $_SESSION["id"]);
+              $stmt->execute();
+            $res1 = $stmt->fetch();
+              $max = $res1["max"];
+              $stmt = $bdd->prepare('select nom,prix,qte from produits inner join panier on panier.id_produit = produits.id_produits where id_panier = (select max(id_panier) from panier where id_user = ? and actif = 1) and id_user = ?;');
+              $stmt->bindValue(1, $_SESSION["id"]);
+              $stmt->bindValue(2, $_SESSION["id"]);
+              $stmt->execute();
+
+              $res2= $stmt->fetchAll();
+              if (count($res2) == 0) {
+                  echo "<p>Ton panier est vide :(</p>";
+
+              }
+          ?>
+              <input type="hidden" name="idpanier" value="<?=$max?>">
+              <input type="hidden" name="iduser" value="<?=$_SESSION["id"]?>">
+              <input type="submit" value="Payer" class="btn">
       </form>
     </div>
   </div>
@@ -121,23 +141,12 @@
 
     <?php
 
-    if(isset($_SESSION["id"])) {
-        require_once 'config.php';
-
-        $stmt = $bdd->prepare('select nom,prix,qte from produits inner join panier on panier.id_produit = produits.id_produits where id_user = ?;');
-        $stmt->bindValue(1, $_SESSION["id"]);
-        $stmt->execute();
-
-        $res = $stmt->fetchAll();
-        if (count($res) == 0) {
-            echo "<p>Ton panier est vide :(</p>";
-
-        } else {
+    if (count($res2) != 0) {
             $tot = 0;
             echo("<h4>Cart
         <span class=\"price\" style=\"color:black\">
-          <i class=\"fa fa-shopping-cart\"></i>" . count($res) . "</h4>");
-            foreach ($res as $row) {
+          <i class=\"fa fa-shopping-cart\"></i>" . count($res2) . "</h4>");
+            foreach ($res2 as $row) {
 
                 echo("<p><b>" . $row['nom'] . "</b><br>" . "<p>Quantité : </p>" . $row['qte'] . "<span class= \"price\">" . $row['prix'] . " €</span> </p>");
                 $tot += $row['qte'] * $row['prix'];
