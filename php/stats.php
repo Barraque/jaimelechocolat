@@ -37,33 +37,64 @@
     </nav>
 
 </header>
-<div class="login-form">
+    <h1>Le produit le plus commandé</h1><br>
+<?php
+require_once 'config.php';
 
-    <form action="ajout_produit_traitement.php" method="post">
-        <h2 class="text-center">Ajouter un produit</h2>
-        <div class="form-group">
-            <input type="text" name="nom" class="form-control" placeholder="Nom" required="required" autocomplete="off">
-        </div>
-        <div class="form-group">
-            <input type="number" name="prix" class="form-control" placeholder="Prix" required="required" autocomplete="off">
-        </div>
-        <div class="form-group">
-            <input type="text" name="marque" class="form-control" placeholder="Marque" required="required" autocomplete="off">
-        </div>
-        <div class="form-group">
-            <input type="text" name="img_src" class="form-control" placeholder="Image" required="required" autocomplete="off">
-        </div>
-        <div class="form-group">
-            <input type="text" name="description" class="form-control" placeholder="Description" required="required" autocomplete="off">
-        </div>
-        <div class="form-group">
-            <input type="number" name="quantite" class="form-control" placeholder="quantite" required="required" autocomplete="off">
-        </div>
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">Ajouter le produit</button>
-        </div>
-    </form>
-</div>
+$stmt = $bdd->prepare("select count(*) cnt, nom from panier pa join produits p on p.id_produits = pa.id_produit group by id_produit order by cnt desc;");
+$stmt->execute();
+
+$resultat= $stmt->fetchAll();
+echo ("<table style=\"border:1px solid black\", align=\"center\">");
+echo (" <tr>
+        
+       <td><b>Nom du produit</b> </td>  
+       <td><b>Nombre de de fois vendu</b></td>
+       
+   </tr>");
+foreach ($resultat as $row){
+    echo ("
+    <tr>
+       <td>{$row["nom"]}</td>
+     
+       <td>{$row["cnt"]}</td>
+       
+   </tr>");
+
+}
+echo ("</table>");
+
+
+?>
+
+    <h1>Le produit le plus acheté</h1><br>
+
+<?php
+
+$stmt = $bdd->prepare("select sum(qte) stock, nom from panier pp join produits pa where pp.id_produit = pa.id_produits group by id_produit order by stock desc;");
+$stmt->execute();
+
+$resultat= $stmt->fetchAll();
+echo ("<table style=\"border:1px solid black\", align=\"center\">");
+echo (" <tr>
+        <b>
+       <td><b>Nom du produit</b></td>
+       <td><b>Nombre de quantité vendu </b></td>
+       </b> 
+   </tr>");
+foreach ($resultat as $row){
+    echo ("
+    <tr>
+        <td>{$row["nom"]}</td>
+        <td>{$row["stock"]}</td>
+
+    </tr>");
+
+}
+echo ("</table>");
+
+
+?>
 
 <footer>
 
@@ -82,27 +113,12 @@
 
 
 <style>
-    .login-form {
-    width: 500px;
-        margin: 50px auto;
-    }
-    .login-form form {
-    margin-bottom: 15px;
-        background: rgba(78, 64, 64, 0.03);
-        box-shadow: 0px 5px 5px rgba(0, 0, 0, 1);
-        padding: 30px;
-    }
-    .login-form h2 {
-    margin: 0 0 15px;
-    }
-    .form-control, .btn {
-    min-height: 38px;
-        border-radius: 2px;
-    }
-    .btn {
-    font-size: 15px;
-        font-weight: bold;
-    }
+h1{
+    text-align: center;
+}
+td{
+    text-align: center;
+}
 </style>
 </body>
 </html>
