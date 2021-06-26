@@ -48,6 +48,7 @@
         <a href="../savoir-faire.html">Notre savoir faire</a>
         <a href="../boutiques.html">Nos boutiques</a>
         <a href="../about.html">À propos</a>
+        <a href="panier.php">Mon panier</a>
         <a href="javascript:void(0);" class="icon" onclick="topnavManager()">
             <i class="fa fa-bars"></i>
         </a>

@@ -33,10 +33,7 @@
     else{
         $test ="<div class=\"top_header\" <h1>Bonjour " . $_SESSION['name'] . "</h1><br><br><button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/deconnexion.php' \"> Deconnexion </button></div> ";
     }
-
     echo $test;
-
-
     ?>
 </header>
 
@@ -47,6 +44,7 @@
     <a href="../savoir-faire.html">Notre savoir faire</a>
     <a href="../boutiques.html">Nos boutiques</a>
     <a href="../about.html">À propos</a>
+    <a href="panier.php">Mon panier</a>
     <a href="javascript:void(0);" class="icon" onclick="topnavManager()">
         <i class="fa fa-bars"></i>
     </a>
@@ -81,8 +79,10 @@
             }
             echo " <h1> Supprimer mon panier</h1>
                    <form action=\"effacerPanier.php\" method=\"get\">
-                   <input type=\"submit\" id=\"delete\" value=\"Supprimer\"><br>
+                   <input type=\"submit\" id=\"delete\" value=\"Supprimer\">
                    </form>";
+
+            echo '<a href="http://localhost/jaimelechocolat/php/payment.php"><button>Payer</button></a>';
         }
     }
     ?>
