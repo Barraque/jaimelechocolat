@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="../css/icons.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/payment.css">
-    <link rel="shortcut icon" type="image/ico" href="favicon.ico"/>
+    <link rel="shortcut icon" type="image/ico" href="../favicon.ico"/>
     <title>La chocolaterie</title>
 </head>
 
 <body>
     <header>
         <!-- Click sur image pour retourner à l'accueil -->
-        <a href="../accueil.php"> <img src="logo.png"> </a>
+        <a href="../accueil.php"> <img src="../logo.png"> </a>
 
         <?php
             session_start();
@@ -37,6 +37,7 @@
         <a href="../savoir-faire.html">Notre savoir faire</a>
         <a href="../boutiques.html">Nos boutiques</a>
         <a href="../about.html">À propos</a>
+        <a href="panier.php">Mon panier</a>
         <a href="javascript:void(0);" class="icon" onclick="topnavManager()">
             <i class="fa fa-bars"></i>
         </a>

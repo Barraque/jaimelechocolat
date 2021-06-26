@@ -14,7 +14,7 @@
 <body>
 <header>
     <!-- Click sur image pour retourner à l'accueil -->
-    <a href="index.html"> <img src="../logo.png"> </a>
+    <a href="../accueil.php"> <img src="../logo.png"> </a>
 </header>
 
 <nav id="mainTopNav" class="topnav">
@@ -24,6 +24,7 @@
     <a href="../savoir-faire.html">Notre savoir faire</a>
     <a href="../boutiques.html">Nos boutiques</a>
     <a href="../about.html">À propos</a>
+    <a href="panier.php">Mon panier</a>
     <a href="javascript:void(0);" class="icon" onclick="topnavManager()">
         <i class="fa fa-bars"></i>
     </a>
@@ -61,6 +62,8 @@
                    <form action=\"effacerPanier.php\" method=\"get\">
                    <input type=\"submit\" id=\"delete\" value=\"Supprimer\"><br>
                    </form>";
+
+            echo '<a href="http://localhost/jaimelechocolat/php/payment.php"><button>Payer</button></a>';
         }
     }
     ?>

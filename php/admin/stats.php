@@ -14,8 +14,8 @@
     <title>Connexion</title>
 </head>
 <body>
+
 <header>
-    <!-- Click sur image pour retourner à l'accueil -->
     <nav id="mainTopNav" class="topnav">
         <a href="../../accueil.php">Accueil</a>
         <a class="active" href="../produits.php">Nos produits</a>
@@ -29,11 +29,20 @@
         <?php
         session_start();
         if(isset($_SESSION["admin"]) and $_SESSION["admin"] == true){
-            echo " <a href=\"./admin.php\">Admin</a>";
+            echo "<a href='./admin.php'>Admin</a>";
         } else {
             header("Location: http://localhost/jaimelechocolat/accueil.php?msg=voous n avez pas le droit d etre ici");
         }
+        function function_alert($msg) {
+            echo "<script type='text/javascript'>alert('$msg');</script>";
+        }
+
+
+        if(isset($_GET["msg"])){
+            function_alert(htmlspecialchars($_GET["msg"]));
+        }
         ?>
+        <a href="./stats.php">Stats</a>
     </nav>
 
 </header>

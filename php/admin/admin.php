@@ -41,6 +41,7 @@
             function_alert(htmlspecialchars($_GET["msg"]));
         }
         ?>
+        <a href="./stats.php">Stats</a>
     </nav>
 
 </header>
