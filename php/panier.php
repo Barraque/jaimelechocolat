@@ -14,7 +14,30 @@
 <body>
 <header>
     <!-- Click sur image pour retourner à l'accueil -->
-    <a href="../accueil.php"> <img src="../logo.png"> </a>
+    <a href="index.html"> <img src="../logo.png"> </a>
+
+    <?php
+    function function_alert($msg) {
+        echo "<script type='text/javascript'>alert('$msg');</script>";
+    }
+
+
+    if(isset($_GET["msg"])){
+        function_alert(htmlspecialchars($_GET["msg"]));
+    }
+
+    session_start();
+    if(!isset($_SESSION['user'])){
+        $test = "<button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/index.php';\"> Connexion </button>";
+    }
+    else{
+        $test ="<div class=\"top_header\" <h1>Bonjour " . $_SESSION['name'] . "</h1><br><br><button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/deconnexion.php' \"> Deconnexion </button></div> ";
+    }
+
+    echo $test;
+
+
+    ?>
 </header>
 
 <nav id="mainTopNav" class="topnav">
@@ -29,7 +52,6 @@
         <i class="fa fa-bars"></i>
     </a>
     <?php
-    session_start();
     if(isset($_SESSION["admin"]) and $_SESSION["admin"] == true){
         echo" <a href=\"./admin/admin.php\">Admin</a>";
     }

@@ -17,6 +17,15 @@
         <a href="accueil.php"> <img src="logo.png"> </a>
 
         <?php
+        function function_alert($msg) {
+            echo "<script type='text/javascript'>alert('$msg');</script>";
+        }
+
+
+        if(isset($_GET["msg"])){
+            function_alert(htmlspecialchars($_GET["msg"]));
+        }
+
         session_start();
         if(!isset($_SESSION['user'])){
             $test = "<button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/index.php';\"> Connexion </button>";
@@ -26,6 +35,8 @@
         }
 
         echo $test;
+
+
         ?>
 
     </header>

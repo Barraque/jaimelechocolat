@@ -26,6 +26,7 @@
             <i class="fa fa-bars"></i>
         </a>
         <?php
+        require_once '../config.php';
         session_start();
         if(isset($_SESSION["admin"]) and $_SESSION["admin"] == true){
             echo "<a href='./admin.php'>Admin</a>";
@@ -43,6 +44,13 @@
         ?>
         <a href="./stats.php">Stats</a>
     </nav>
+
+    <?php
+
+    $test ="<div class=\"top_header\" <h1>Bonjour " . $_SESSION['name'] . "</h1><br><br><button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/deconnexion.php' \"> Deconnexion </button></div> ";
+    echo $test;
+
+    ?>
 
 </header>
 <div class="login-form">
@@ -78,7 +86,6 @@
     <table style="border:1px solid black">
         <tr><b><td>Nom</td><td>Marque</td><td>Description</td><td>Prix</td><td>Quantite</td><td>Url de l'image</td><td>Modifier</td><td>Supprimer</td></b></tr>
         <?php
-        require_once '../config.php';
         $stmt = $bdd->prepare('select p.id_produits id,nom,prix,marque,description,img_src,quantite from produits p join stock s on p.id_produits = s.id_produits;');
         $stmt->execute();
         $res = $stmt->fetchAll();
