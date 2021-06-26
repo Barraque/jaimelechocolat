@@ -33,10 +33,7 @@
     else{
         $test ="<div class=\"top_header\" <h1>Bonjour " . $_SESSION['name'] . "</h1><br><br><button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/deconnexion.php' \"> Deconnexion </button></div> ";
     }
-
     echo $test;
-
-
     ?>
 </header>
 

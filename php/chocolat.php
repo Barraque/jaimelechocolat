@@ -12,7 +12,7 @@
 <body>
 <header>
     <!-- Click sur image pour retourner à l'accueil -->
-    <a href="index.html"> <img src="../logo.png"> </a>
+    <a href="../accueil.php"> <img src="../logo.png"> </a>
 
     <?php
     require_once 'config.php';

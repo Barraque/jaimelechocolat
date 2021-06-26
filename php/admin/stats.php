@@ -46,7 +46,7 @@
     </nav>
     <?php
 
-    $test ="<div class=\"top_header\" <h1>Bonjour " . $_SESSION['name'] . "</h1><br><br><button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/deconnexion.php' \"> Deconnexion </button></div> ";
+    $test ="<div class=\"top_header\" <br><br><h1>Bonjour " . $_SESSION['name'] . "</h1><button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/deconnexion.php' \"> Deconnexion </button></div> ";
     echo $test;
 
     ?>
