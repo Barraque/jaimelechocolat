@@ -60,7 +60,7 @@
             }
             echo " <h1> Supprimer mon panier</h1>
                    <form action=\"effacerPanier.php\" method=\"get\">
-                   <input type=\"submit\" id=\"delete\" value=\"Supprimer\"><br>
+                   <input type=\"submit\" id=\"delete\" value=\"Supprimer\">
                    </form>";
 
             echo '<a href="http://localhost/jaimelechocolat/php/payment.php"><button>Payer</button></a>';
