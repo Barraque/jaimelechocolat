@@ -14,18 +14,27 @@
 <body>
     <header>
         <!-- Click sur image pour retourner à l'accueil -->
-        <a href="../accueil.php"> <img src="logo.png"> </a>
+        <a href="../accueil.php"> <img src="../logo.png"> </a>
 
         <?php
-            session_start();
-                if(!isset($_SESSION['user'])){
-                     $test = "<button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/index.php';\"> Connexion </button>";
-                }
-            else{
-                 $test ="<h1 class=\"p-5\">Bonjour " . $_SESSION['user'] . "</h1> <button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/deconnexion.php' \"> Deconnexion </button>";
-                }
+        require_once 'config.php';
+        function function_alert($msg) {
+            echo "<script type='text/javascript'>alert('$msg');</script>";
+        }
 
+
+        if(isset($_GET["msg"])){
+            function_alert(htmlspecialchars($_GET["msg"]));
+        }
+        session_start();
+        if(!isset($_SESSION['user'])){
+            $test = "<button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/index.php';\"> Connexion </button>";
+        }
+        else{
+            $test ="<div class=\"top_header\" <h1>Bonjour " . $_SESSION['name'] . "</h1><br><br><button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/deconnexion.php' \"> Deconnexion </button></div> ";
+        }
         echo $test;
+
         ?>
 
     </header>
@@ -112,7 +121,7 @@
         </label>
           <?php
               if(isset($_SESSION["id"])) {
-              require_once 'config.php';
+
               $stmt = $bdd->prepare('select max(id_panier) max from panier where id_user = ? and actif = 1');
               $stmt->bindValue(1, $_SESSION["id"]);
               $stmt->execute();
