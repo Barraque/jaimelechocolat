@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,9 +45,9 @@
 
 </header>
 <div class="login-form">
-
     <form action="ajout_produit_traitement.php" method="post">
-        <h2 class="text-center">Ajouter un produit</h2>
+        <h2 class="text-center">Ajouter un produit
+        </h2>
         <div class="form-group">
             <input type="text" name="nom" class="form-control" placeholder="Nom" required="required" autocomplete="off">
         </div>
@@ -65,7 +64,12 @@
             <input type="text" name="description" class="form-control" placeholder="Description" required="required" autocomplete="off">
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">Ajouter le produit</button>
+            <input type="number" name="quantite" class="form-control" placeholder="quantite" required="required" autocomplete="off">
+        </div>
+        <br>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Ajouter le produit
+            </button>
         </div>
     </form>
 </div>
@@ -73,12 +77,12 @@
     <table style="border:1px solid black">
         <tr><b><td>Nom</td><td>Marque</td><td>Description</td><td>Prix</td><td>Quantite</td><td>Url de l'image</td><td>Modifier</td><td>Supprimer</td></b></tr>
         <?php
-            require_once '../config.php';
-            $stmt = $bdd->prepare('select p.id_produits id,nom,prix,marque,description,img_src,quantite from produits p join stock s on p.id_produits = s.id_produits;');
-            $stmt->execute();
-            $res = $stmt->fetchAll();
-            foreach ($res as $row){
-                echo ("<tr>
+        require_once '../config.php';
+        $stmt = $bdd->prepare('select p.id_produits id,nom,prix,marque,description,img_src,quantite from produits p join stock s on p.id_produits = s.id_produits;');
+        $stmt->execute();
+        $res = $stmt->fetchAll();
+        foreach ($res as $row){
+            echo ("<tr>
                         <form action='modifProduit.php' method='POST'>
                             <input type='hidden' name='id_produits' value='{$row["id"]}'>
                             <td><input type='text' name='nom' value='{$row["nom"]}'></td>
@@ -95,33 +99,34 @@
                             <td><input type='submit' value='Supprimer'></td>
                         </form>
                         </tr>");
-            }
+        }
 
-            ?>
+        ?>
     </table>
 </div>
 
 
+
 <style>
     .login-form {
-    width: 50%;
+        width: 50%;
         margin: 50px auto;
     }
     .login-form form {
-    margin-bottom: 15px;
+        margin-bottom: 15px;
         background: rgba(78, 64, 64, 0.03);
         box-shadow: 0px 5px 5px rgba(0, 0, 0, 1);
         padding: 30px;
     }
     .login-form h2 {
-    margin: 0 0 15px;
+        margin: 0 0 15px;
     }
     .form-control, .btn {
-    min-height: 38px;
+        min-height: 38px;
         border-radius: 2px;
     }
     .btn {
-    font-size: 15px;
+        font-size: 15px;
         font-weight: bold;
     }
 </style>

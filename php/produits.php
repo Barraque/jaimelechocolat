@@ -41,7 +41,6 @@
             <i class="fa fa-bars"></i>
         </a>
         <?php
-        session_start();
         if(isset($_SESSION["admin"]) and $_SESSION["admin"] == true){
             echo" <a href=\"./admin/admin.php\">Admin</a>";
         }

@@ -49,5 +49,5 @@ if(isset($_SESSION["id"]) and isset($_GET["quantity"]) and isset($_GET["idprodui
     $stmt4->execute();
 }
 
-//header("Location: http://localhost/jaimelechocolat/php/chocolat?id={$_GET["idproduit"]}&msg={$_GET["quantity"]} produits ont été rajouté à votre panier");
+header("Location: http://localhost/jaimelechocolat/php/chocolat?id={$_GET["idproduit"]}&msg={$_GET["quantity"]} produits ont été rajouté à votre panier");
 ?>

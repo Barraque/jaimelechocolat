@@ -42,7 +42,7 @@
 
     if(isset($_SESSION["id"])){
         require_once 'config.php';
-        $stmt = $bdd->prepare('select nom,prix,qte from produits inner join panier on panier.id_produit = produits.id_produits where id_user = ?;');
+        $stmt = $bdd->prepare('select nom,prix,qte from produits inner join panier on panier.id_produit = produits.id_produits where id_user = ? and actif = 1;');
         $stmt->bindValue(1, $_SESSION["id"]);
         $stmt->execute();
         $res = $stmt->fetchAll();

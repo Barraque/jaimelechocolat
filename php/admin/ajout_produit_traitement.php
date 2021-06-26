@@ -2,7 +2,7 @@
 
 
 if (!empty($_POST['nom']) && !empty($_POST['prix']) && !empty($_POST['marque']) && !empty($_POST['img_src']) && !empty($_POST['description']) && !empty($_POST['quantite'])) {
-    require_once 'config.php';
+    require_once '../config.php';
     foreach ($_POST as $key => $value) {
         $$key = htmlspecialchars($value);
     }
@@ -22,7 +22,7 @@ if (!empty($_POST['nom']) && !empty($_POST['prix']) && !empty($_POST['marque']) 
     $insert2 -> bindValue(1, $id_produit);
     $insert2 -> bindValue(2, $quantite);
     $insert2->execute();
-
+    header('Location: http://localhost/jaimelechocolat/php/admin/admin.php');
 } else {
     header('Location: http://localhost/jaimelechocolat/php/admin/admin.php?reg_err=password');
     die();
