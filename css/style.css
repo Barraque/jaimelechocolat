@@ -3,6 +3,7 @@
 * {
     box-sizing : border-box;
     font-family: 'Courgette', cursive;
+    /*font-family: 'Roboto';*/
 }
 
 /* navbar ============================================= */
@@ -63,6 +64,22 @@ header img {
 
 header {
     background-color: #8D5941;
+}
+
+.top_header{
+    position: absolute;
+
+    top: 5%;
+    right: 5%;
+
+}
+
+.top_header_button{
+    position: absolute;
+
+    top: 10%;
+    right: 5%;
+
 }
 
 /* footer ============================================= */

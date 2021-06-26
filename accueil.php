@@ -17,29 +17,45 @@
         <a href="accueil.php"> <img src="logo.png"> </a>
 
         <?php
+            function function_alert($msg) {
+                echo "<script type='text/javascript'>alert('$msg');</script>";
+            }
+
+
+            if(isset($_GET["msg"])){
+                function_alert(htmlspecialchars($_GET["msg"]));
+            }
+
             session_start();
                 if(!isset($_SESSION['user'])){
                      $test = "<button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/index.php';\"> Connexion </button>";
                 }
             else{
-                 $test ="<h1 class=\"p-5\">Bonjour " . $_SESSION['user'] . "</h1> <button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/deconnexion.php' \"> Deconnexion </button>";
+                 $test ="<div class=\"top_header\" <h1>Bonjour " . $_SESSION['name'] . "</h1><br><br><button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/deconnexion.php' \"> Deconnexion </button></div> ";
                 }
 
-        echo $test;
+            echo $test;
+
+
         ?>
 
     </header>
 
     <nav id="mainTopNav" class="topnav">
-            <a class="active" href="accueil.php">Accueil</a>
-            <a href="produits.php">Nos produits</a>
-            <a href="choco_perso.php">Mon chocolat personalisé</a>
-            <a href="savoir-faire.html">Notre savoir faire</a>
-            <a href="boutiques.html">Nos boutiques</a>
-            <a href="about.html">À propos</a>
-            <a href="javascript:void(0);" class="icon" onclick="topnavManager()">
-                <i class="fa fa-bars"></i>
-            </a>
+        <a href="./accueil.php">Accueil</a>
+        <a class="active" href="./php/produits.php">Nos produits</a>
+        <a href="./choco_perso.php">Mon chocolat personalisé</a>
+        <a href="./savoir-faire.html">Notre savoir faire</a>
+        <a href="./boutiques.html">Nos boutiques</a>
+        <a href="./about.html">À propos</a>
+        <a href="javascript:void(0);" class="icon" onclick="topnavManager()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <?php
+        if(isset($_SESSION["admin"]) and $_SESSION["admin"] == true){
+            echo" <a href=\"./php/admin/admin.php\">Admin</a>";
+        }
+        ?>
     </nav>
 
     <main>

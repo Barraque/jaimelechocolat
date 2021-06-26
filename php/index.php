@@ -127,7 +127,7 @@
     .login-form {
         box-sizing : border-box;
         font-family: 'Courgette', cursive;
-        width: 340px;
+        width: 70%;
         margin: 50px auto;
     }
     .login-form form {
