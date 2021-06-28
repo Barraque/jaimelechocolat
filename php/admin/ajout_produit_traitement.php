@@ -2,7 +2,7 @@
 
 
 if (!empty($_POST['nom']) && !empty($_POST['prix']) && !empty($_POST['marque']) && !empty($_POST['img_src']) && !empty($_POST['description']) && !empty($_POST['quantite'])) {
-    require_once '../config.php';
+    require_once '../traitement/config.php';
     foreach ($_POST as $key => $value) {
         $$key = htmlspecialchars($value);
     }

@@ -26,9 +26,9 @@ if(!empty($_POST['email']) && !empty($_POST['password']))
                 if(isset($data["admin"]) && $data["admin"] == 1){
                     $_SESSION['admin'] = true;
                 }
-                header('Location: landing.php');
+                header('Location: ../landing.php');
                 die();
-            }else{ header('Location: index.php?login_err=password'); die(); }
-        }else{ header('Location: index.php?login_err=email'); die(); }
-    }else{ header('Location: index.php?login_err=already'); die(); }
+            }else{ header('Location: ../index.php?login_err=password'); die(); }
+        }else{ header('Location: ../index.php?login_err=email'); die(); }
+    }else{ header('Location: ../index.php?login_err=already'); die(); }
 }

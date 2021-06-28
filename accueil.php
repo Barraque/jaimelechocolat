@@ -31,7 +31,7 @@
                      $test = "<button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/index.php';\"> Connexion </button>";
                 }
             else{
-                 $test ="<div class=\"top_header\" <h1>Bonjour " . $_SESSION['name'] . "</h1><br><br><button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/deconnexion.php' \"> Deconnexion </button></div> ";
+                $test ="<div class=\"top_header\" <h1>Bonjour " . $_SESSION['name'] . "</h1><br><br><button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/traitement/deconnexion.php' \"> Deconnexion </button></div> ";
                 }
 
             echo $test;
@@ -73,7 +73,7 @@
         <div class="Grid--1of2">
             <div class="Grid">
                 <div class=" Grid-cell">
-                    <a href="produits.php">
+                    <a href="php/produits.php">
                         <div class="container"> <img src="data/img/produits.jpg">
                             <div class="center">Nos produits</div>
                         </div>

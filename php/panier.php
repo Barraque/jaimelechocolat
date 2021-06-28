@@ -31,7 +31,7 @@
         $test = "<button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/index.php';\"> Connexion </button>";
     }
     else{
-        $test ="<div class=\"top_header\" <h1>Bonjour " . $_SESSION['name'] . "</h1><br><br><button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/deconnexion.php' \"> Deconnexion </button></div> ";
+        $test ="<div class=\"top_header\" <h1>Bonjour " . $_SESSION['name'] . "</h1><br><br><button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/traitement/deconnexion.php' \"> Deconnexion </button></div> ";
     }
     echo $test;
     ?>
@@ -61,7 +61,7 @@
     <?php
 
     if(isset($_SESSION["id"])){
-        require_once 'config.php';
+        require_once 'traitement/config.php';
         $stmt = $bdd->prepare('select nom,prix,qte from produits inner join panier on panier.id_produit = produits.id_produits where id_user = ? and actif = 1;');
         $stmt->bindValue(1, $_SESSION["id"]);
         $stmt->execute();
@@ -77,8 +77,8 @@
                 echo("<p>Quantité : " . $row['qte'] . " - Prix par produit : " . $row['prix'] . " - Soit " . $row['qte'] * $row['prix'] . " € </p>");
                 echo("</div>");
             }
-            echo " <h1> Supprimer mon panier</h1>
-                   <form action=\"effacerPanier.php\" method=\"get\">
+            echo "<h1> Supprimer mon panier</h1>
+                   <form action=\"traitement/effacerPanier.php\" method=\"get\">
                    <input type=\"submit\" id=\"delete\" value=\"Supprimer\">
                    </form>";
 
