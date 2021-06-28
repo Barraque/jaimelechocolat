@@ -46,14 +46,14 @@
     </nav>
     <?php
 
-    $test ="<div class=\"top_header\" <br><br><h1>Bonjour " . $_SESSION['name'] . "</h1><button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/deconnexion.php' \"> Deconnexion </button></div> ";
+    $test ="<div class=\"top_header\" ><br><br><h1>Bonjour " . $_SESSION['name'] . "</h1><button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/traitement/deconnexion.php' \"> Deconnexion </button></div> ";
     echo $test;
 
     ?>
 </header>
     <h1>Le produit le plus commandé</h1><br>
 <?php
-require_once '../config.php';
+require_once '../traitement/config.php';
 
 $stmt = $bdd->prepare("select count(*) cnt, nom from panier pa join produits p on p.id_produits = pa.id_produit group by id_produit order by cnt desc;");
 $stmt->execute();

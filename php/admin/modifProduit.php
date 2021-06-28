@@ -5,7 +5,7 @@
         header("Location: http://localhost/jaimelechocolat/accueil.php?msg=voous n avez pas le droit d etre ici");
     }
 
-    include "../config.php";
+require_once '../traitement/config.php';
     $stmt = $bdd->prepare("UPDATE produits SET nom = ? , prix = ? , marque = ? , description = ? , img_src = ? where id_produits = ?");
     $stmt->bindValue(1, $_POST["nom"]);
     $stmt->bindValue(2, $_POST["prix"]);

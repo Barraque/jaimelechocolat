@@ -26,7 +26,7 @@
             <i class="fa fa-bars"></i>
         </a>
         <?php
-        require_once '../config.php';
+        require_once '../traitement/config.php';
         session_start();
         if(isset($_SESSION["admin"]) and $_SESSION["admin"] == true){
             echo "<a href='./admin.php'>Admin</a>";
@@ -47,7 +47,7 @@
 
     <?php
 
-    $test ="<div class=\"top_header\" <br><br><h1>Bonjour " . $_SESSION['name'] . "</h1><button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/deconnexion.php' \"> Deconnexion </button></div> ";
+    $test ="<div class=\"top_header\" ><br><br><h1>Bonjour " . $_SESSION['name'] . "</h1><button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/traitement/deconnexion.php' \"> Deconnexion </button></div> ";
     echo $test;
 
     ?>

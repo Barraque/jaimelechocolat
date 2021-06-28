@@ -15,17 +15,14 @@
     <a href="../accueil.php"> <img src="../logo.png"> </a>
 
     <?php
-    require_once 'config.php';
-    if(isset($_GET["msg"])){
-        function_alert(htmlspecialchars($_GET["msg"]));
-    }
+    require_once 'traitement/config.php';
 
     session_start();
     if(!isset($_SESSION['user'])){
         $test = "<button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/index.php';\"> Connexion </button>";
     }
     else{
-        $test ="<div class=\"top_header\" <h1>Bonjour " . $_SESSION['name'] . "</h1><br><br><button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/deconnexion.php' \"> Deconnexion </button></div> ";
+        $test ="<div class=\"top_header\" <h1>Bonjour " . $_SESSION['name'] . "</h1><br><br><button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/traitement/deconnexion.php' \"> Deconnexion </button></div> ";
     }
 
     echo $test;
@@ -42,6 +39,7 @@
     <a href="../savoir-faire.html">Notre savoir faire</a>
     <a href="../boutiques.html">Nos boutiques</a>
     <a href="../about.html">À propos</a>
+    <a href="panier.php">Mon panier</a>
     <a href="javascript:void(0);" class="icon" onclick="topnavManager()">
         <i class="fa fa-bars"></i>
     </a>
@@ -83,7 +81,7 @@
             <br>
             <p><?=$res["prix"]?>€</p>
             <p><?=$res["quantite"]?> restants </p>
-            <form action="ajouterProduit.php" method="get">
+            <form action="traitement/ajouterProduit.php" method="get">
                 <p> Quantité : </p>
                 <input type="number" id="quantity" name="quantity" min="0">
                 <input type="hidden" id="idproduit" name="idproduit" value="<?=$id?>"/>

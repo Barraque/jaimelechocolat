@@ -17,7 +17,7 @@
         <a href="../accueil.php"> <img src="../logo.png"> </a>
 
         <?php
-        require_once 'config.php';
+        require_once 'traitement/config.php';
         function function_alert($msg) {
             echo "<script type='text/javascript'>alert('$msg');</script>";
         }
@@ -32,7 +32,7 @@
             $test = "<button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/index.php';\"> Connexion </button>";
         }
         else{
-            $test ="<div class=\"top_header\" <h1>Bonjour " . $_SESSION['name'] . "</h1><br><br><button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/deconnexion.php' \"> Deconnexion </button></div> ";
+            $test ="<div class=\"top_header\" <h1>Bonjour " . $_SESSION['name'] . "</h1><br><br><button onclick=\"window.location.href = 'http://localhost/jaimelechocolat/php/traitement/deconnexion.php' \"> Deconnexion </button></div> ";
         }
 
         echo $test;
